@@ -1,0 +1,51 @@
+<div>
+    <h2>{{ (isEdit) ? 'Edit' : 'Add'}} Product</h2>
+    <div>
+        <form [formGroup]="productForm" (ngSubmit)="onFormSubmit()">
+
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" class="form-control" id="title" placeholder="Title" formControlName="title" 
+              [ngClass]="{'error': formsubmitted && productForm.get('title')?.invalid }">
+            </div>
+
+            <div class="form-group">
+              <label for="price">Price</label>
+              <input type="number" class="form-control" id="price" placeholder="Price" formControlName="price"
+              [ngClass]="{'error': formsubmitted && productForm.get('price')?.invalid }">
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category</label>
+                <input type="text" class="form-control" id="category" placeholder="Category" formControlName="category"
+                [ngClass]="{'error': formsubmitted && productForm.get('category')?.invalid }">
+            </div>
+
+            <div class="form-group">
+                <label for="rating">Rating</label>
+                <select name="rating" id="rating" formControlName="rating" class="form-control"
+                [ngClass]="{'error': formsubmitted && productForm.get('tiratingtle')?.invalid }">
+                    <option *ngFor="let val of rating" [value]="val">{{val}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" rows="4" cols="50" class="form-control" formControlName="description"
+                [ngClass]="{'error': formsubmitted && productForm.get('description')?.invalid }">
+                    At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
+                </textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="imageurl">Image URL</label>
+                <input type="text" class="form-control" id="imageurl" placeholder="URL" formControlName="imageurl"
+                [ngClass]="{'error': formsubmitted && productForm.get('imageurl')?.invalid }">
+            </div>
+
+            <button type="button" class="btn btn-danger float-right margin-left-20" *ngIf="isEdit" (click)="deleteProduct()">Delete</button>
+            <button type="submit" class="btn btn-primary float-right">Submit</button>
+            
+          </form>
+    </div>
+</div>

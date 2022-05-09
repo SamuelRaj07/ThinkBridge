@@ -1,0 +1,12 @@
+
+    <div class="content">
+        <img [src]="imageurl" alt="Product-image">
+        <h5 [attr.title]="title">{{title}}</h5>
+        <h6>${{price}}</h6>
+        <ul>
+            <li><i class="fa fa-star checked"></i> {{rating.rate}} ({{rating.count}} reviews)</li>
+        </ul>
+        <div class="button-container">
+            <button class="edit" routerLink="/add-product" [queryParams]="{edit: true, productid: id}">Edit</button>
+        </div>
+    </div>

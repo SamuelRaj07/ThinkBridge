@@ -1,0 +1,15 @@
+.form-group {
+    margin-bottom: 20px;
+}
+
+.float-right {
+    float: right;
+}
+
+.margin-left-20 {
+    margin-left: 20px;
+}
+
+.error {
+    border: 2px solid red;
+}
